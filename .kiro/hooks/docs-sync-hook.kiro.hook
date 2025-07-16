@@ -1,0 +1,22 @@
+{
+  "enabled": true,
+  "name": "Documentation Sync",
+  "description": "Monitors all JavaScript source files and configuration files for changes and triggers documentation updates in README.md and other documentation files",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "src/**/*.js",
+      "*.js",
+      "package.json",
+      ".eslintrc.js",
+      "jest.config.js",
+      "docker-compose.yml",
+      "Dockerfile"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Source code has been modified in this Node.js Telegram bot project. Please review the changes and update the documentation accordingly. Focus on:\n\n1. Update README.md if there are changes to:\n   - Core functionality or features\n   - Installation or setup instructions\n   - Usage examples or API changes\n   - Configuration options\n\n2. Update any existing documentation files (DEPLOYMENT.md, EXAMPLES.md) if relevant\n\n3. Ensure documentation reflects:\n   - New features or handlers added\n   - Changes to bot commands or functionality\n   - Updated dependencies or configuration\n   - Modified deployment procedures\n\n4. Keep documentation in sync with the Hebrew-first user experience and Israeli vehicle lookup focus of this bot\n\nPlease analyze the changed files and provide updated documentation that accurately reflects the current state of the codebase."
+  }
+}
